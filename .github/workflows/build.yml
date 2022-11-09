@@ -15,4 +15,4 @@ jobs:
       with:
         name: kovirobi0probe1run1win
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix build
+    - run: nix --log-format internal-json -v build
