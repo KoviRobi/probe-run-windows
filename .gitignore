@@ -1,0 +1,7 @@
+# Nix outputs
+result
+result-*
+
+# Editor files
+*~
+\#*\#
