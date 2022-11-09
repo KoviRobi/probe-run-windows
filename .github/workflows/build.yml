@@ -13,6 +13,6 @@ jobs:
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
     - uses: cachix/cachix-action@v12
       with:
-        name: kovirobi0probe1run1win
+        name: probe-run-win
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix --log-format bar-with-logs build
