@@ -16,3 +16,9 @@ jobs:
         name: probe-run-win
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix --log-format bar-with-logs build
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: probe-run.exe
+        path: result/bin/probe-run.exe
+        retention-days: 90
