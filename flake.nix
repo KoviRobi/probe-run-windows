@@ -18,8 +18,14 @@
         probe-run = prev.probe-run.overrideAttrs (attrs: {
           meta.platforms = attrs.meta.platforms or [ ] ++ [ "x86_64-windows" ];
         });
+
+        probe-rs-cli = prev.probe-rs-cli.overrideAttrs (attrs: {
+          meta.platforms = attrs.meta.platforms or [ ] ++ [ "x86_64-windows" ];
+        });
       };
 
-      packages.x86_64-linux.default = pkgs.pkgsCross.mingwW64.probe-run;
+      packages.x86_64-linux.probe-run = pkgs.pkgsCross.mingwW64.probe-run;
+
+      packages.x86_64-linux.probe-rs-cli = pkgs.pkgsCross.mingwW64.probe-rs-cli;
     };
 }
